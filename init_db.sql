@@ -1,0 +1,2 @@
+CREATE DATABASE filmapp;
+CREATE DATABASE sonar;
