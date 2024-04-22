@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /api/v1.0
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: debug
+#    web: debug
+    com.bbattu: debug
+
+spring:
+  application:
+    name: FilmApp
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/filmapp}
+    username: ${DATASOURCE_USERNAME:postgres}
+    password: ${DATASOURCE_PASSWORD:password}
+  jpa:
+    hibernate:
+      #      ddl-auto: create-drop
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: ${SHOW_SQL:false}
